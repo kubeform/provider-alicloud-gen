@@ -39,13 +39,14 @@ func main() {
 	}
 
 	opts := &util.GeneratorOptions{
-		ProviderName:         "alicloud",
-		ProviderNameOriginal: "alicloud",
-		ProviderData:         alicloud.Provider().(*schema.Provider),
-		ProviderImportPath:   "github.com/aliyun/terraform-provider-alicloud/alicloud",
-		Version:              "v1alpha1",
-		APIsPath:             apisPath,
-		ControllerPath:       controllerPath,
+		ProviderName:             "alicloud",
+		ProviderNameOriginal:     "alicloud",
+		ProviderData:             alicloud.Provider().(*schema.Provider),
+		ProviderGetterMethodBody: `alicloud.Provider().(*tfschema.Provider)`,
+		ProviderImportPath:       "github.com/aliyun/terraform-provider-alicloud/alicloud",
+		Version:                  "v1alpha1",
+		APIsPath:                 apisPath,
+		ControllerPath:           controllerPath,
 	}
 	err := util.Generate(opts)
 	if err != nil {
