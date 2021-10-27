@@ -44,6 +44,7 @@ func main() {
 		ProviderData:             alicloud.Provider().(*schema.Provider),
 		ProviderGetterMethodBody: `alicloud.Provider().(*tfschema.Provider)`,
 		ProviderImportPath:       "github.com/aliyun/terraform-provider-alicloud/alicloud",
+		ProviderConfig:           "aliyun/alicloud",
 		Version:                  "v1alpha1",
 		APIsPath:                 apisPath,
 		ControllerPath:           controllerPath,
